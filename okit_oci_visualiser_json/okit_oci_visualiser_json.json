@@ -1,0 +1,65 @@
+{
+  "autonomous_databases": [],
+  "block_storage_volumes": [],
+  "compartments": [
+    {
+      "compartment_id": null,
+      "defined_tags": {},
+      "definition": "",
+      "description": "okit-comp001",
+      "display_name": "okit-comp001",
+      "freeform_tags": {},
+      "id": "okit.compartment.1dc8e889-4008-443e-af5e-febd6f357e2c"
+    },
+    {
+      "compartment_id": "okit.compartment.1dc8e889-4008-443e-af5e-febd6f357e2c",
+      "defined_tags": {},
+      "definition": "",
+      "description": "okit-comp002",
+      "display_name": "okit-comp002",
+      "freeform_tags": {},
+      "id": "okit.compartment.c76075d9-442f-4e87-88e1-321ed5eec7ff"
+    }
+  ],
+  "created": "2021-3-13 19:2:10",
+  "customer_premise_equipments": [],
+  "database_systems": [],
+  "description": "# Description\n__Created 2021-3-13 19:2:10__\n\n--------------------------------------\n\n",
+  "dynamic_routing_gateways": [],
+  "fast_connects": [],
+  "file_storage_systems": [],
+  "instance_pools": [],
+  "instances": [],
+  "internet_gateways": [],
+  "ipsec_connections": [],
+  "load_balancers": [],
+  "local_peering_gateways": [],
+  "mysql_database_systems": [],
+  "nat_gateways": [],
+  "network_security_groups": [],
+  "object_storage_buckets": [],
+  "oke_clusters": [],
+  "okit_version": "0.18.0",
+  "remote_peering_connections": [],
+  "route_tables": [],
+  "security_lists": [],
+  "service_gateways": [],
+  "subnets": [],
+  "template_type": "Git",
+  "title": "OKIT OCI Visualiser Json",
+  "updated": "2021-3-13 19:3:21",
+  "virtual_cloud_networks": [
+    {
+      "cidr_block": "10.0.0.0/16",
+      "compartment_id": "okit.compartment.c76075d9-442f-4e87-88e1-321ed5eec7ff",
+      "defined_tags": {},
+      "definition": "",
+      "display_name": "okit-vcn001",
+      "dns_label": "vcn001",
+      "freeform_tags": {},
+      "id": "okit.virtualcloudnetwork.dd073197-f772-4a4b-a42a-7b9043e1aa30",
+      "ipv6cidr_block": "",
+      "is_ipv6enabled": false
+    }
+  ]
+}
