@@ -1,0 +1,77 @@
+{
+  "autonomous_databases": [],
+  "block_storage_volumes": [],
+  "compartments": [
+    {
+      "compartment_id": null,
+      "defined_tags": {},
+      "definition": "",
+      "description": "okit-comp001",
+      "display_name": "okit-comp001",
+      "freeform_tags": {},
+      "id": "okit.compartment.519daee0-b8c3-4aa8-8673-c786bfd06e53"
+    },
+    {
+      "compartment_id": "okit.compartment.519daee0-b8c3-4aa8-8673-c786bfd06e53",
+      "defined_tags": {},
+      "definition": "",
+      "description": "okit-comp002",
+      "display_name": "okit-comp002",
+      "freeform_tags": {},
+      "id": "okit.compartment.deeac26b-e3dd-4ff6-af2a-4f5e2dcccd11"
+    }
+  ],
+  "created": "2021-3-13 19:22:30",
+  "customer_premise_equipments": [],
+  "database_systems": [],
+  "description": "# Description\n__Created 2021-3-13 19:22:30__\n\n--------------------------------------\n\n",
+  "dynamic_routing_gateways": [],
+  "fast_connects": [],
+  "file_storage_systems": [],
+  "instance_pools": [],
+  "instances": [],
+  "internet_gateways": [],
+  "ipsec_connections": [],
+  "load_balancers": [],
+  "local_peering_gateways": [],
+  "mysql_database_systems": [],
+  "nat_gateways": [],
+  "network_security_groups": [],
+  "object_storage_buckets": [
+    {
+      "compartment_id": "okit.compartment.deeac26b-e3dd-4ff6-af2a-4f5e2dcccd11",
+      "defined_tags": {},
+      "definition": "",
+      "display_name": "okit-osb001",
+      "freeform_tags": {},
+      "id": "okit.objectstoragebucket.75e0e992-2dda-4607-9d67-4fd35a2efb1d",
+      "namespace": "Tenancy Name",
+      "public_access_type": "NoPublicAccess",
+      "storage_tier": "Standard"
+    }
+  ],
+  "oke_clusters": [],
+  "okit_version": "0.18.0",
+  "remote_peering_connections": [],
+  "route_tables": [],
+  "security_lists": [],
+  "service_gateways": [],
+  "subnets": [],
+  "template_type": "Git",
+  "title": "OKIT OCI Visualiser Json",
+  "updated": "2021-3-13 19:23:25",
+  "virtual_cloud_networks": [
+    {
+      "cidr_block": "10.0.0.0/16",
+      "compartment_id": "okit.compartment.deeac26b-e3dd-4ff6-af2a-4f5e2dcccd11",
+      "defined_tags": {},
+      "definition": "",
+      "display_name": "okit-vcn001",
+      "dns_label": "vcn001",
+      "freeform_tags": {},
+      "id": "okit.virtualcloudnetwork.d68378b6-52de-4e1c-9166-4018594f128d",
+      "ipv6cidr_block": "",
+      "is_ipv6enabled": false
+    }
+  ]
+}
