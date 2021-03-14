@@ -112,7 +112,7 @@
       "id": "okit.instance.68ac4f7a-82d1-4790-a3c1-2010e075f3a0",
       "is_pv_encryption_in_transit_enabled": false,
       "metadata": {
-        "ssh_authorized_keys": "",
+        "ssh_authorized_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDQBR3WSws8sApU01VrvPNgixo3pIbEb8rSALL7jDKUpStuGZtlYbjiubcXcjb6EL9YskarXEI17TKQ3h80H7zIx2mGpajrhVWVjVazaZpvf8fgsLO65nTDDyf4dbRa4MKZ56Fm1Qu+/OYvbtIcF80KWPJCzJ2ABw4UHTfdsHPy6nXrg85HMwxPHLBt4WjOn/GjI4nrWDfA/+FEt7QlVn0/6mywdCNncBEBGJ2q7nXdPfd3Z+IQw9DAMSUZpoOY13uhStuyPoZgWzbsRLO+78MYOacbX/nkUMbRkm3aqEi+ujVx74uF32aSGCkdUv0Za6k4NyJhFXGJLIanCQWX3x5Jw0dhUVEHBXbSeXb4jmrDnisOspYAVvFXK4VcSVCr2ZvTtIYskwWBEpKKl7uoUyfKVwdjc02qSsOKIGBroW0xuMZmHW/dELdF8pkPJRIOEX3VHHlYZ1IpOw8bi9ZCa/MI3/ehoNDWqPzPAzPBamZ8dxmPX2yte2acFk+gGnRiDqs=",
         "user_data": ""
       },
       "object_storage_bucket_ids": [],
@@ -421,8 +421,8 @@
           "source_type": "CIDR_BLOCK",
           "tcp_options": {
             "destination_port_range": {
-              "max": "8080",
-              "min": "8080"
+              "max": "80",
+              "min": "80"
             },
             "source_port_range": {
               "max": "",
@@ -645,7 +645,7 @@
   ],
   "template_type": "Git",
   "title": "OKIT OCI Visualiser Json",
-  "updated": "2021-3-14 0:34:25",
+  "updated": "2021-3-14 1:13:5",
   "virtual_cloud_networks": [
     {
       "cidr_block": "10.0.0.0/16",
