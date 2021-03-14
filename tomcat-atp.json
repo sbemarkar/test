@@ -62,7 +62,7 @@
       "is_pv_encryption_in_transit_enabled": false,
       "metadata": {
         "ssh_authorized_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDQBR3WSws8sApU01VrvPNgixo3pIbEb8rSALL7jDKUpStuGZtlYbjiubcXcjb6EL9YskarXEI17TKQ3h80H7zIx2mGpajrhVWVjVazaZpvf8fgsLO65nTDDyf4dbRa4MKZ56Fm1Qu+/OYvbtIcF80KWPJCzJ2ABw4UHTfdsHPy6nXrg85HMwxPHLBt4WjOn/GjI4nrWDfA/+FEt7QlVn0/6mywdCNncBEBGJ2q7nXdPfd3Z+IQw9DAMSUZpoOY13uhStuyPoZgWzbsRLO+78MYOacbX/nkUMbRkm3aqEi+ujVx74uF32aSGCkdUv0Za6k4NyJhFXGJLIanCQWX3x5Jw0dhUVEHBXbSeXb4jmrDnisOspYAVvFXK4VcSVCr2ZvTtIYskwWBEpKKl7uoUyfKVwdjc02qSsOKIGBroW0xuMZmHW/dELdF8pkPJRIOEX3VHHlYZ1IpOw8bi9ZCa/MI3/ehoNDWqPzPAzPBamZ8dxmPX2yte2acFk+gGnRiDqs=",
-        "user_data": "#cloud-config\npackages:\n  # Install Java JDK\n  - jdk\n  \n  # Install Tomcat\n  - tomcat\n  - tomcat-webapps \n  - tomcat-admin-webapps\n\n  #Install Oracle instant client\n  - oracle-release-el7\n\nruncmd:\n  # install Oracle instant client\n  - yum-config-manager --enable ol7_oracle_instantclient\n  - yum -y install oracle-instantclient18.3-basic\n  - yum -y install oracle-instantclient18.3-sqlplus\n\n  # Start Tomcat\n  - setsebool -P tomcat_can_network_connect_db 1\n  - systemctl start tomcat\n  - systemctl status tomcat\n  - systemctl enable tomcat\n  - wget -O /home/opc/todoapp.war https://github.com/oracle-quickstart/oci-arch-tomcat-autonomous/releases/latest/download/todoapp-atp.war\n  - chown opc:opc /home/opc/todoapp.war\n  - cp /home/opc/todoapp.war /usr/share/tomcat/webapps/\n  - sleep 30\n  - cp /usr/share/tomcat/lib/ojdbc8-18.3.0.0.jar /usr/share/tomcat/webapps/todoapp/WEB-INF/lib\n  - cp /usr/share/tomcat/lib/ucp-18.3.0.0.jar /usr/share/tomcat/webapps/todoapp/WEB-INF/lib\n  - systemctl stop tomcat\n  - systemctl start tomcat\n\n  - service firewalld stop\n  - systemctl disable firewalld\n  \nfinal_message: \"**** The system is finally up, after $UPTIME  ****\"\n"
+        "user_data": "#cloud-config\npackages:\n  # Install Java JDK\n  - jdk\n  \n  # Install Tomcat\n  - tomcat\n  - tomcat-webapps \n  - tomcat-admin-webapps\n\n  #Install Oracle instant client\n  - oracle-release-el7\n\nruncmd:\n  # install Oracle instant client\n  - yum-config-manager --enable ol7_oracle_instantclient\n  - yum -y install oracle-instantclient18.3-basic\n  - yum -y install oracle-instantclient18.3-sqlplus\n\n  # Start Tomcat\n  - setsebool -P tomcat_can_network_connect_db 1\n  - systemctl start tomcat\n  - systemctl status tomcat\n  - systemctl enable tomcat\n  - wget -O /home/opc/todoapp.war https://github.com/oracle-quickstart/oci-arch-tomcat-autonomous/releases/latest/download/todoapp-atp.war\n  - chown opc:opc /home/opc/todoapp.war\n  - cp /home/opc/todoapp.war /usr/share/tomcat/webapps/\n  - sleep 30\n  - cp /usr/share/tomcat/lib/ojdbc8-18.3.0.0.jar /usr/share/tomcat/webapps/todoapp/WEB-INF/lib\n  - cp /usr/share/tomcat/lib/ucp-18.3.0.0.jar /usr/share/tomcat/webapps/todoapp/WEB-INF/lib\n  - systemctl stop tomcat\n  - systemctl start tomcat\n\n  - service firewalld stop\n  - systemctl disable firewalld\n  - iptables -t nat -I PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080\n  \nfinal_message: \"**** The system is finally up, after $UPTIME  ****\"\n"
       },
       "object_storage_bucket_ids": [],
       "preserve_boot_volume": false,
@@ -91,6 +91,57 @@
           "nsg_ids": [],
           "skip_source_dest_check": false,
           "subnet_id": "okit.subnet.cab4643a-6424-495a-b7d3-d943099b9011"
+        }
+      ]
+    },
+    {
+      "agent_config": {
+        "is_management_disabled": false,
+        "is_monitoring_disabled": false
+      },
+      "autonomous_database_ids": [],
+      "availability_domain": "1",
+      "block_storage_volume_ids": [],
+      "compartment_id": "okit.compartment.1782e220-d581-4da4-989b-bac48000ca8f",
+      "count": 1,
+      "defined_tags": {},
+      "definition": "",
+      "display_name": "bastion-instance",
+      "fault_domain": "",
+      "freeform_tags": {},
+      "id": "okit.instance.68ac4f7a-82d1-4790-a3c1-2010e075f3a0",
+      "is_pv_encryption_in_transit_enabled": false,
+      "metadata": {
+        "ssh_authorized_keys": "",
+        "user_data": ""
+      },
+      "object_storage_bucket_ids": [],
+      "preserve_boot_volume": false,
+      "primary_vnic": {
+        "assign_public_ip": true,
+        "hostname_label": "okit-in0020",
+        "nsg_ids": [],
+        "skip_source_dest_check": false,
+        "subnet_id": "okit.subnet.f6a1dd8d-5086-4454-883d-4e234fff492a"
+      },
+      "shape": "VM.Standard.E3.Flex",
+      "shape_config": {
+        "memory_in_gbs": 16,
+        "ocpus": 1
+      },
+      "source_details": {
+        "boot_volume_size_in_gbs": "50",
+        "os": "Oracle Linux",
+        "source_type": "image",
+        "version": "7.8"
+      },
+      "vnics": [
+        {
+          "assign_public_ip": true,
+          "hostname_label": "okit-in0020",
+          "nsg_ids": [],
+          "skip_source_dest_check": false,
+          "subnet_id": "okit.subnet.f6a1dd8d-5086-4454-883d-4e234fff492a"
         }
       ]
     }
@@ -313,37 +364,6 @@
               "min": ""
             }
           }
-        },
-        {
-          "description": "",
-          "icmp_options": {
-            "code": "",
-            "type": ""
-          },
-          "is_stateless": false,
-          "protocol": "6",
-          "source": "0.0.0.0/0",
-          "source_type": "CIDR_BLOCK",
-          "tcp_options": {
-            "destination_port_range": {
-              "max": "22",
-              "min": "22"
-            },
-            "source_port_range": {
-              "max": "",
-              "min": ""
-            }
-          },
-          "udp_options": {
-            "destination_port_range": {
-              "max": "",
-              "min": ""
-            },
-            "source_port_range": {
-              "max": "",
-              "min": ""
-            }
-          }
         }
       ],
       "vcn_id": "okit.virtualcloudnetwork.a81b6562-62af-416f-b010-28d0e65de71e"
@@ -525,6 +545,37 @@
               "min": ""
             }
           }
+        },
+        {
+          "description": "",
+          "icmp_options": {
+            "code": "",
+            "type": ""
+          },
+          "is_stateless": false,
+          "protocol": "6",
+          "source": "0.0.0.0/0",
+          "source_type": "CIDR_BLOCK",
+          "tcp_options": {
+            "destination_port_range": {
+              "max": "22",
+              "min": "22"
+            },
+            "source_port_range": {
+              "max": "",
+              "min": ""
+            }
+          },
+          "udp_options": {
+            "destination_port_range": {
+              "max": "",
+              "min": ""
+            },
+            "source_port_range": {
+              "max": "",
+              "min": ""
+            }
+          }
         }
       ],
       "vcn_id": "okit.virtualcloudnetwork.a81b6562-62af-416f-b010-28d0e65de71e"
@@ -594,7 +645,7 @@
   ],
   "template_type": "Git",
   "title": "OKIT OCI Visualiser Json",
-  "updated": "2021-3-13 23:9:46",
+  "updated": "2021-3-14 0:32:51",
   "virtual_cloud_networks": [
     {
       "cidr_block": "10.0.0.0/16",
