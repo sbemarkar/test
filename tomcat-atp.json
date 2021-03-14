@@ -12,9 +12,9 @@
       "display_name": "okit-atpTarget",
       "freeform_tags": {},
       "id": "okit.autonomousdatabase.a5b5489a-99c5-4400-bf5b-de96337f2307",
-      "is_auto_scaling_enabled": true,
+      "is_auto_scaling_enabled": false,
       "is_free_tier": false,
-      "license_model": "BRING_YOUR_OWN_LICENSE",
+      "license_model": "LICENSE_INCLUDED",
       "nsg_ids": [
         "okit.networksecuritygroup.1f2aafdb-8b28-4e19-80da-0a7b861f6613"
       ],
@@ -645,7 +645,7 @@
   ],
   "template_type": "Git",
   "title": "OKIT OCI Visualiser Json",
-  "updated": "2021-3-14 1:13:5",
+  "updated": "2021-3-14 1:20:20",
   "virtual_cloud_networks": [
     {
       "cidr_block": "10.0.0.0/16",
