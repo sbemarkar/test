@@ -5,7 +5,7 @@
       "compartment_id": "okit.compartment.1782e220-d581-4da4-989b-bac48000ca8f",
       "cpu_core_count": 1,
       "data_storage_size_in_tbs": 1,
-      "db_name": "okitad001",
+      "db_name": "tomcatatp001",
       "db_workload": "OLTP",
       "defined_tags": {},
       "definition": "",
@@ -645,7 +645,7 @@
   ],
   "template_type": "Git",
   "title": "OKIT OCI Visualiser Json",
-  "updated": "2021-3-14 0:32:51",
+  "updated": "2021-3-14 0:34:25",
   "virtual_cloud_networks": [
     {
       "cidr_block": "10.0.0.0/16",
